@@ -37,6 +37,8 @@ claude plugin install kol@kol
 
 Then, in your repo, in Claude Code: `/kol:setup`.
 
+The marketplace is cloned from GitHub with git, over SSH by default. If you have no SSH key for GitHub on this computer, start Claude Code with `CLAUDE_CODE_PLUGIN_PREFER_HTTPS=1` in its environment and add the marketplace again.
+
 ## Set up
 
 `/kol:setup` (or just say "set up Kol") does this, in order:
