@@ -1,0 +1,15 @@
+#!/bin/sh
+# kol-line from the kol Claude Code plugin: start | stop [--force] | logs [n] | check | status | worker |
+# digest [--hook] | statusline [--install [--apply]] | watch | autostart on|off|status | window [mode|try].
+# On the Bash tool's PATH while the plugin is enabled; the plugin's hooks run it by its full path.
+# Finds Node 20+ even without a login shell (scripts/find-node.sh).
+here=$(cd "$(dirname "$0")" && pwd -P)
+. "$here/../scripts/find-node.sh"
+node=$(kol_find_node)
+if [ -z "$node" ]; then
+  # A hook, the status line or the session monitor must never fail loudly: say nothing.
+  case " $* " in *" --hook "* | " statusline "* | " watch "*) exit 0 ;; esac
+  echo "kol-line: Node.js was not found (looked on PATH, in ~/.kol/line-node, Homebrew, nvm, Volta, asdf, fnm). Install Node 20+, or set KOL_NODE to its full path." >&2
+  exit 127
+fi
+exec "$node" "$here/../lib/kol-line.mjs" "$@"

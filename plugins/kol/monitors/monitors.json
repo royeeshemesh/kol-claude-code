@@ -1,0 +1,7 @@
+[
+  {
+    "name": "kol-news",
+    "command": "\"${CLAUDE_PLUGIN_ROOT}/bin/kol-line\" watch",
+    "description": "Kol line news and progress: a new 🔴 question for you, an invite, a work-out that was worked out, and one short progress line per step of a work-out you started or are in"
+  }
+]

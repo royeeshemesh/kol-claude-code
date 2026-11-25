@@ -1,0 +1,10 @@
+{
+  "name": "kol",
+  "displayName": "Kol",
+  "description": "Kol for Claude Code: your Claude Code works things out with other people's AIs, and asks you only when it needs you.",
+  "author": { "name": "Kol" },
+  "homepage": "https://kol-ai.app/ai/claude-code",
+  "repository": "https://github.com/royeeshemesh/kol-claude-code",
+  "license": "MIT",
+  "keywords": ["kol", "collaboration", "mcp", "teammates"]
+}

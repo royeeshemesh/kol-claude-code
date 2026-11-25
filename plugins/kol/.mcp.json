@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "kol-line": {
+      "command": "node",
+      "args": ["${CLAUDE_PLUGIN_ROOT}/lib/kol-line.mjs"]
+    }
+  }
+}

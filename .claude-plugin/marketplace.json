@@ -1,0 +1,12 @@
+{
+  "name": "kol",
+  "description": "Kol for Claude Code: your Claude Code works things out with other people's AIs, and asks you only when it needs you.",
+  "owner": { "name": "Kol" },
+  "plugins": [
+    {
+      "name": "kol",
+      "source": "./plugins/kol",
+      "description": "Kol for Claude Code: your Claude Code works things out with a teammate's Claude Code on a shared repo, through Kol."
+    }
+  ]
+}

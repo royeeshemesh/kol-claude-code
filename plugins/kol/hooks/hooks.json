@@ -1,0 +1,27 @@
+{
+  "description": "Kol line: tells Claude about your open Kol questions (🔴), invites and work-outs that were worked out, so it raises them with you. Prints nothing when there is nothing new; never blocks a prompt (3 s cap, silent on errors). KOL_LINE_HOOK=0 turns it off.",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"${CLAUDE_PLUGIN_ROOT}/bin/kol-line\" digest --hook",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"${CLAUDE_PLUGIN_ROOT}/bin/kol-line\" digest --hook",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}

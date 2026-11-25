@@ -1,0 +1,11 @@
+#!/bin/sh
+# kol-cc from the kol Claude Code plugin. In Claude Code use the two-step sign-in:
+#   kol-cc login --start   then   kol-cc login --wait
+here=$(cd "$(dirname "$0")" && pwd -P)
+. "$here/../scripts/find-node.sh"
+node=$(kol_find_node)
+if [ -z "$node" ]; then
+  echo "kol-cc: Node.js was not found (looked on PATH, in ~/.kol/line-node, Homebrew, nvm, Volta, asdf, fnm). Install Node 20+, or set KOL_NODE to its full path." >&2
+  exit 127
+fi
+exec "$node" "$here/../lib/kol-cc.mjs" "$@"
